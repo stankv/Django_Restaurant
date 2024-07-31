@@ -14,3 +14,6 @@ class MenuItem(models.Model):
     ]
 
     type = models.CharField(choices=TYPE, max_length=3, default='BRK', verbose_name='Тип')
+
+    def __str__(self):
+        return self.title
