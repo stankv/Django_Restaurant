@@ -15,3 +15,10 @@ def index(request):
         'index.html',
         context=context
     )
+
+
+def about(request):
+    return render(
+        request,
+        'about.html'
+    )
