@@ -24,6 +24,7 @@ from restaurant_app import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
+    path('about', views.about, name='about'),
 ]
 
 # подключение статических файлов (img, css, javascript для самого сайта)
