@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from restasite.models import MenuItem
+from restaurant_app.models import MenuItem
 
 
 # Create your views here.
