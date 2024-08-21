@@ -8,6 +8,13 @@ from restaurant_app.forms import ContactForm
 
 # Create your views here.
 def index(request):
+    return render(
+        request,
+        'index.html'
+    )
+
+
+def menu(request):
     # считываем блюда из БД, сортируем случайным образом и выводим первые 6
     menu_brk = MenuItem.objects.filter(type__exact='BRK').order_by('?')[:6]
     menu_lun = MenuItem.objects.filter(type__exact='LUN').order_by('?')[:6]
@@ -15,15 +22,8 @@ def index(request):
     context = {'menu_brk': menu_brk, 'menu_lun': menu_lun, 'menu_din': menu_din}
     return render(
         request,
-        'index.html',
+        'menu.html',
         context=context
-    )
-
-
-def about(request):
-    return render(
-        request,
-        'about.html'
     )
 
 
