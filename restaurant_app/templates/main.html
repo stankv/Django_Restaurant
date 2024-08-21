@@ -41,7 +41,7 @@
                     <div class="row align-items-center no-gutters">
                         <div class="col-xl-3 col-lg-2">
                             <div class="logo">
-                                <a href="index.html">
+                                <a href="{% url 'index' %}">
                                     <img src="{% static 'img/logo.png' %}" alt="">
                                 </a>
                             </div>
@@ -51,7 +51,7 @@
                                 <nav>
                                     <ul id="navigation">
                                         <li><a class="active" href="{% url 'index' %}">Главная</a></li>
-                                        <li><a href="{% url 'about' %}">О нас</a></li>
+                                        <li><a href="{% url 'menu' %}">Меню</a></li>
                                         <li><a href="{% url 'contacts' %}">Контакты</a></li>
                                     </ul>
                                 </nav>
@@ -130,7 +130,7 @@
                         </h3>
                         <ul>
                             <li><a href="{% url 'index' %}">Главная</a></li>
-                            <li><a href="{% url 'about' %}">О нас</a></li>
+                            <li><a href="{% url 'menu' %}">О нас</a></li>
                             <li><a href="{% url 'contacts' %}">Контакты</a></li>
                         </ul>
                     </div>
