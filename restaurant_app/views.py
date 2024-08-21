@@ -1,4 +1,6 @@
+from django.core.mail import EmailMultiAlternatives
 from django.shortcuts import render
+from django.template.loader import get_template
 
 from restaurant_app.models import MenuItem
 from restaurant_app.forms import ContactForm
@@ -25,6 +27,7 @@ def about(request):
     )
 
 
+# обработка формы обратной связи
 def contacts(request):
     context = {}
     if request.method == 'POST':
@@ -40,3 +43,18 @@ def contacts(request):
         'contacts.html',
         context=context
     )
+
+
+# ф-я отправки e-mail с формы обратной связи
+def send_message(name, email, message):
+    text = get_template('message.html')
+    html = get_template('message.html')
+    context = {'name': name, 'email': email, 'message': message}
+    subject = 'Message from User of site'
+    from_email = 'from@domen_site.com'    # должен быть домен самого сайта
+    text_content = text.render(context)
+    html_content = html.render(context)
+
+    msg = EmailMultiAlternatives(subject, text_content, from_email, ['manager@example.com'])
+    msg.attach_alternative(html_content, 'text/html')    # html-форма письма (как вложение)
+    msg.send()
