@@ -5,4 +5,5 @@
 
 Вид главной страницы сайта:
 
-![Главная](https://github.com/user-attachments/assets/b08d4b89-92fc-45b7-b5a4-92adc8f232bc)
+![Главная](https://github.com/user-attachments/assets/40d9bd51-5c17-4a7e-b8a3-d77b7c7e9103)
+
